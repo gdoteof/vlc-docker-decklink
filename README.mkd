@@ -7,7 +7,7 @@ Start bash CLI
 
 `docker run --privileged --rm -i -t -p 1234:1234 -p 1234:1234/udp -v /home/kevin/Kunin-2.mp4:/data/kunin.mp4 vlc /bin/bash`
 
-Once inside the container (or alternatively, replace /bin/bash with all of this), listen o n port 1234 for Hi59 (1080i5994) video.
+Once inside the container (or alternatively, replace /bin/bash with all of this), listen on port 1234 for Hi59 (1080i5994) video.
 
 `cvlc udp://@:1234 --decklink-mode Hi59 --decklink-aspect-ratio=16:9 -V decklinkoutput -A decklinkoutput --decklink-vout-mode Hi59 --decklink-vout-video-connection sdi --network-caching 150`
 
