@@ -1,3 +1,7 @@
+Docker run command assumes docker file is built into an image called `vlc`
+
+From inside repo, build  with `docker build -t vlc .`
+
 Start temporary docker container with port 1234 passed through, load a file from the host into /data/kunin.mp4 on the container.
 Start bash CLI
 
