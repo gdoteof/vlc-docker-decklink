@@ -1,0 +1,14 @@
+Docker run command assumes docker file is built into an image called `vlc`
+
+From inside repo, build  with `docker build -t vlc .`
+
+Start temporary docker container with port 1234 passed through, load a file from the host into /data/kunin.mp4 on the container.
+Start bash CLI
+
+`docker run --privileged --rm -i -t -p 1234:1234 -p 1234:1234/udp -v /home/kevin/Kunin-2.mp4:/data/kunin.mp4 vlc /bin/bash`
+
+Once inside the container (or alternatively, replace /bin/bash with all of this), listen o n port 1234 for Hi59 (1080i5994) video.
+
+`cvlc udp://@:1234 --decklink-mode Hi59 --decklink-aspect-ratio=16:9 -V decklinkoutput -A decklinkoutput --decklink-vout-mode Hi59 --decklink-vout-video-connection sdi --network-caching 150`
+
+
